@@ -1,5 +1,6 @@
 # Игра угадай число от 1 до 100
 from random import randint as r
+from typing import Any
 
 
 # Генерируем случайное число от 1 до 100
@@ -9,7 +10,7 @@ def get_num():
 
 
 # Проверяем число на валидность
-def is_valid(user_num):
+def is_valid(user_num: Any) -> bool:
     if user_num.isdigit():
         user_num = int(user_num)
         if 1 <= user_num <= 100:
@@ -25,7 +26,7 @@ def is_valid(user_num):
 
 
 # Игра=)
-def play(number):
+def play(number: int) -> None:
     cnt = 0
     while True:
         user_num = input("Я загадал число от 1 до 100 - угадай его: ")
@@ -45,7 +46,7 @@ def play(number):
 
 
 # Рестарт игры
-def restart():
+def restart() -> str:
     answer = input('Cыграем еще раз? "y|n": ').lower()
     while answer not in ("y", "n"):
         print("ШТА??? Некорректный ввод\n")
