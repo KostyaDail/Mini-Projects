@@ -4,7 +4,7 @@ from typing import Any
 
 
 # Генерируем случайное число от 1 до 100
-def get_num():
+def get_num() -> int:
     my_num = r(1, 100)
     return my_num
 
